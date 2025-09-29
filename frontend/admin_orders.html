@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Orders | ShopSmart</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="admin-layout">
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <img src="images/logo.svg" alt="logo">
+      <span>Admin</span>
+    </div>
+    <nav>
+      <a href="admin_dashboard.html">Dashboard</a>
+      <a href="admin_products.html">Products</a>
+      <a href="admin_customers.html">Customers</a>
+      <a class="active" href="admin_orders.html">Orders</a>
+      <a href="admin_reports.html">Reports</a>
+    </nav>
+  </aside>
+
+  <main class="admin-main">
+    <header class="admin-header">
+      <h1>Orders</h1>
+    </header>
+
+    <section class="card">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>User</th>
+              <th>Total</th>
+              <th>Date</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#1</td>
+              <td>Alice Sharma</td>
+              <td>₹1400.00</td>
+              <td>01 Aug 2025</td>
+              <td>
+                <select class="chip">
+                  <option>Pending</option>
+                  <option selected>Completed</option>
+                  <option>Shipped</option>
+                  <option>Cancelled</option>
+                </select>
+              </td>
+              <td>
+                <button class="chip">View</button>
+              </td>
+            </tr>
+            <tr>
+              <td>#2</td>
+              <td>Rohit Verma</td>
+              <td>₹900.00</td>
+              <td>02 Aug 2025</td>
+              <td>
+                <select class="chip">
+                  <option selected>Pending</option>
+                  <option>Completed</option>
+                  <option>Shipped</option>
+                  <option>Cancelled</option>
+                </select>
+              </td>
+              <td>
+                <button class="chip">View</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

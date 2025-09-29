@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShopSmart | Admin Register</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="auth-bg">
+  <div class="auth-card">
+    <a href="index.html" class="brand auth-brand">
+      <img src="images/logo.svg" alt="ShopSmart Logo" class="brand-logo" />
+      <span>ShopSmart</span>
+    </a>
+    <h2>Create Admin</h2>
+    <form class="form">
+      <div class="form-control">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="e.g. Super Admin" required />
+      </div>
+      <div class="form-control">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="admin@example.com" required />
+      </div>
+      <div class="form-control">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="********" required />
+      </div>
+      <button type="submit" class="btn btn-primary full">Register</button>
+      <a class="btn btn-outline full" href="login_admin.html">Back to Login</a>
+    </form>
+  </div>
+</body>
+</html>

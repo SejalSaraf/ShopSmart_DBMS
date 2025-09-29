@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShopSmart | Products</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-content">
+      <a href="index.html" class="brand">
+        <img src="images/logo.svg" alt="ShopSmart Logo" class="brand-logo" />
+        <span>ShopSmart</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html" class="active">Products</a>
+        <a href="cart.html">Cart</a>
+        <a href="profile.html">Profile</a>
+        <a href="settings.html">Settings</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container section-header">
+      <h2>All Products</h2>
+      <p class="muted">Browse and filter your favorite items</p>
+    </div>
+    <div class="container products-layout">
+      <!-- Filters Sidebar -->
+      <aside class="filters">
+        <h4>Filter</h4>
+        <div class="filter-group">
+          <label class="label">Category</label>
+          <label class="chk"><input type="checkbox" name="category" value="Clothing" checked> Clothing</label>
+          <label class="chk"><input type="checkbox" name="category" value="Footwear" checked> Footwear</label>
+        </div>
+        <div class="filter-group">
+          <label for="priceRange" class="label">Max Price: <span id="priceValue">₹4000</span></label>
+          <input type="range" id="priceRange" min="300" max="4000" step="50" value="4000">
+        </div>
+        <div class="filter-group">
+          <label class="label" for="sort">Sort by</label>
+          <select id="sort">
+            <option value="popular">Popularity</option>
+            <option value="low-high">Price: Low to High</option>
+            <option value="high-low">Price: High to Low</option>
+          </select>
+        </div>
+        <button class="btn btn-outline full" id="resetFilters">Reset Filters</button>
+      </aside>
+
+      <!-- Product Grid -->
+      <div class="product-grid" id="productGrid">
+        <!-- Items (data attributes for filtering/sorting) -->
+        <article class="product-card" data-id="p1" data-name="Casual T-Shirt" data-price="500" data-category="Clothing">
+          <div class="badge">15% OFF</div>
+          <img src="https://images.unsplash.com/photo-1520975922371-1b309c0a87ae?q=80&w=1200&auto=format&fit=crop" alt="Casual T-Shirt" />
+          <h3>Casual T-Shirt</h3>
+          <p class="price">₹425 <span class="mrp">₹500</span></p>
+          <button class="btn btn-add" data-add>+ Add to Cart</button>
+        </article>
+        <article class="product-card" data-id="p2" data-name="Formal Shirt" data-price="1200" data-category="Clothing">
+          <div class="badge">10% OFF</div>
+          <img src="https://images.unsplash.com/photo-1548883354-7622d2cc8690?q=80&w=1200&auto=format&fit=crop" alt="Formal Shirt" />
+          <h3>Formal Shirt</h3>
+          <p class="price">₹1080 <span class="mrp">₹1200</span></p>
+          <button class="btn btn-add" data-add>+ Add to Cart</button>
+        </article>
+        <article class="product-card" data-id="p3" data-name="Denim Jeans" data-price="2000" data-category="Clothing">
+          <div class="badge">12% OFF</div>
+          <img src="https://images.unsplash.com/photo-1539533113208-f6df8cc8b543?q=80&w=1200&auto=format&fit=crop" alt="Denim Jeans" />
+          <h3>Denim Jeans</h3>
+          <p class="price">₹1760 <span class="mrp">₹2000</span></p>
+          <button class="btn btn-add" data-add>+ Add to Cart</button>
+        </article>
+        <article class="product-card" data-id="p4" data-name="Summer Dress" data-price="1800" data-category="Clothing">
+          <div class="badge">8% OFF</div>
+          <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=1200&auto=format&fit=crop" alt="Summer Dress" />
+          <h3>Summer Dress</h3>
+          <p class="price">₹1656 <span class="mrp">₹1800</span></p>
+          <button class="btn btn-add" data-add>+ Add to Cart</button>
+        </article>
+        <article class="product-card" data-id="p5" data-name="Hoodie" data-price="1500" data-category="Clothing">
+          <div class="badge">10% OFF</div>
+          <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1200&auto=format&fit=crop" alt="Hoodie" />
+          <h3>Hoodie</h3>
+          <p class="price">₹1350 <span class="mrp">₹1500</span></p>
+          <button class="btn btn-add" data-add>+ Add to Cart</button>
+        </article>
+        <article class="product-card" data-id="p6" data-name="Sneakers" data-price="3000" data-category="Footwear">
+          <div class="badge">20% OFF</div>
+          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop" alt="Sneakers" />
+          <h3>Sleek Sneakers</h3>
+          <p class="price">₹2400 <span class="mrp">₹3000</span></p>
+          <button class="btn btn-add" data-add>+ Add to Cart</button>
+        </article>
+        <article class="product-card" data-id="p7" data-name="Sandals" data-price="1200" data-category="Footwear">
+          <div class="badge">12% OFF</div>
+          <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1200&auto=format&fit=crop" alt="Sandals" />
+          <h3>Comfy Sandals</h3>
+          <p class="price">₹1056 <span class="mrp">₹1200</span></p>
+          <button class="btn btn-add" data-add>+ Add to Cart</button>
+        </article>
+        <article class="product-card" data-id="p8" data-name="Jacket" data-price="3500" data-category="Clothing">
+          <div class="badge">15% OFF</div>
+          <img src="https://images.unsplash.com/photo-1520975922371-1b309c0a87ae?q=80&w=1200&auto=format&fit=crop" alt="Jacket" />
+          <h3>Winter Jacket</h3>
+          <p class="price">₹2975 <span class="mrp">₹3500</span></p>
+          <button class="btn btn-add" data-add>+ Add to Cart</button>
+        </article>
+        <!-- Men (additions) -->
+        <article class="product-card" data-id="p9" data-name="Checked Shirt" data-price="1299" data-category="Clothing">
+          <div class="badge">10% OFF</div>
+          <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=1200&auto=format&fit=crop" alt="Men Checked Shirt" />
+          <h3>Checked Shirt</h3>
+          <p class="price">₹1169 <span class="mrp">₹1299</span></p>
+          <button class="btn btn-add" data-add>+ Add to Cart</button>
+        </article>
+        <article class="product-card" data-id="p10" data-name="Casual Chinos" data-price="1599" data-category="Clothing">
+          <div class="badge">8% OFF</div>
+          <img src="https://images.unsplash.com/photo-1516826957135-700dedea698c?q=80&w=1200&auto=format&fit=crop" alt="Men Chinos" />
+          <h3>Casual Chinos</h3>
+          <p class="price">₹1471 <span class="mrp">₹1599</span></p>
+          <button class="btn btn-add" data-add>+ Add to Cart</button>
+        </article>
+        <article class="product-card" data-id="p11" data-name="Graphic Tee" data-price="799" data-category="Clothing">
+          <div class="badge">15% OFF</div>
+          <img src="https://images.unsplash.com/photo-1521337586325-6bfe10ce785f?q=80&w=1200&auto=format&fit=crop" alt="Men Graphic Tee" />
+          <h3>Graphic Tee</h3>
+          <p class="price">₹679 <span class="mrp">₹799</span></p>
+          <button class="btn btn-add" data-add>+ Add to Cart</button>
+        </article>
+        <article class="product-card" data-id="p12" data-name="Bomber Jacket" data-price="2999" data-category="Clothing">
+          <div class="badge">20% OFF</div>
+          <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?q=80&w=1200&auto=format&fit=crop" alt="Men Bomber Jacket" />
+          <h3>Bomber Jacket</h3>
+          <p class="price">₹2399 <span class="mrp">₹2999</span></p>
+          <button class="btn btn-add" data-add>+ Add to Cart</button>
+        </article>
+        <article class="product-card" data-id="p13" data-name="Running Shoes" data-price="3499" data-category="Footwear">
+          <div class="badge">25% OFF</div>
+          <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=1200&auto=format&fit=crop" alt="Men Running Shoes" />
+          <h3>Running Shoes</h3>
+          <p class="price">₹2624 <span class="mrp">₹3499</span></p>
+          <button class="btn btn-add" data-add>+ Add to Cart</button>
+        </article>
+        <article class="product-card" data-id="p14" data-name="Slim Fit Jeans" data-price="2099" data-category="Clothing">
+          <div class="badge">12% OFF</div>
+          <img src="https://images.unsplash.com/photo-1503342217505-b0a15cf70489?q=80&w=1200&auto=format&fit=crop" alt="Men Slim Jeans" />
+          <h3>Slim Fit Jeans</h3>
+          <p class="price">₹1847 <span class="mrp">₹2099</span></p>
+          <button class="btn btn-add" data-add>+ Add to Cart</button>
+        </article>
+        <article class="product-card" data-id="p15" data-name="Polo T-Shirt" data-price="999" data-category="Clothing">
+          <div class="badge">10% OFF</div>
+          <img src="https://images.unsplash.com/photo-1541976076758-347942db1970?q=80&w=1200&auto=format&fit=crop" alt="Men Polo Tee" />
+          <h3>Polo T-Shirt</h3>
+          <p class="price">₹899 <span class="mrp">₹999</span></p>
+          <button class="btn btn-add" data-add>+ Add to Cart</button>
+        </article>
+        <article class="product-card" data-id="p16" data-name="Denim Jacket" data-price="3299" data-category="Clothing">
+          <div class="badge">18% OFF</div>
+          <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?q=80&w=1200&auto=format&fit=crop" alt="Men Denim Jacket" />
+          <h3>Denim Jacket</h3>
+          <p class="price">₹2705 <span class="mrp">₹3299</span></p>
+          <button class="btn btn-add" data-add>+ Add to Cart</button>
+        </article>
+        <article class="product-card" data-id="p17" data-name="Formal Trousers" data-price="1899" data-category="Clothing">
+          <div class="badge">10% OFF</div>
+          <img src="https://images.unsplash.com/photo-1582738412003-fc01f3273fe2?q=80&w=1200&auto=format&fit=crop" alt="Men Formal Trousers" />
+          <h3>Formal Trousers</h3>
+          <p class="price">₹1709 <span class="mrp">₹1899</span></p>
+          <button class="btn btn-add" data-add>+ Add to Cart</button>
+        </article>
+        <article class="product-card" data-id="p18" data-name="Leather Loafers" data-price="2799" data-category="Footwear">
+          <div class="badge">15% OFF</div>
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop" alt="Men Loafers" />
+          <h3>Leather Loafers</h3>
+          <p class="price">₹2379 <span class="mrp">₹2799</span></p>
+          <button class="btn btn-add" data-add>+ Add to Cart</button>
+        </article>
+
+        <!-- Women (additions) -->
+        <article class="product-card" data-id="p19" data-name="Floral Dress" data-price="1999" data-category="Clothing">
+          <div class="badge">20% OFF</div>
+          <img src="https://images.unsplash.com/photo-1540574611450-8f2053c2fd3e?q=80&w=1200&auto=format&fit=crop" alt="Women Floral Dress" />
+          <h3>Floral Dress</h3>
+          <p class="price">₹1599 <span class="mrp">₹1999</span></p>
+          <button class="btn btn-add" data-add>+ Add to Cart</button>
+        </article>
+        <article class="product-card" data-id="p20" data-name="Party Heels" data-price="2499" data-category="Footwear">
+          <div class="badge">18% OFF</div>
+          <img src="https://images.unsplash.com/photo-1520974735194-9e0ce827c014?q=80&w=1200&auto=format&fit=crop" alt="Women Heels" />
+          <h3>Party Heels</h3>
+          <p class="price">₹2049 <span class="mrp">₹2499</span></p>
+          <button class="btn btn-add" data-add>+ Add to Cart</button>
+        </article>
+        <article class="product-card" data-id="p21" data-name="Kurti Set" data-price="2299" data-category="Clothing">
+          <div class="badge">12% OFF</div>
+          <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=1200&auto=format&fit=crop" alt="Women Kurti Set" />
+          <h3>Kurti Set</h3>
+          <p class="price">₹2023 <span class="mrp">₹2299</span></p>
+          <button class="btn btn-add" data-add>+ Add to Cart</button>
+        </article>
+        <article class="product-card" data-id="p22" data-name="Saree" data-price="2599" data-category="Clothing">
+          <div class="badge">10% OFF</div>
+          <img src="https://images.unsplash.com/photo-1551727974-8b94bd9798de?q=80&w=1200&auto=format&fit=crop" alt="Women Saree" />
+          <h3>Elegant Saree</h3>
+          <p class="price">₹2339 <span class="mrp">₹2599</span></p>
+          <button class="btn btn-add" data-add>+ Add to Cart</button>
+        </article>
+        <article class="product-card" data-id="p23" data-name="Denim Skirt" data-price="1399" data-category="Clothing">
+          <div class="badge">10% OFF</div>
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop" alt="Women Denim Skirt" />
+          <h3>Denim Skirt</h3>
+          <p class="price">₹1259 <span class="mrp">₹1399</span></p>
+          <button class="btn btn-add" data-add>+ Add to Cart</button>
+        </article>
+        <article class="product-card" data-id="p24" data-name="Casual Top" data-price="899" data-category="Clothing">
+          <div class="badge">8% OFF</div>
+          <img src="https://images.unsplash.com/photo-1542060748-10c28b62716d?q=80&w=1200&auto=format&fit=crop" alt="Women Casual Top" />
+          <h3>Casual Top</h3>
+          <p class="price">₹827 <span class="mrp">₹899</span></p>
+          <button class="btn btn-add" data-add>+ Add to Cart</button>
+        </article>
+        <article class="product-card" data-id="p25" data-name="Ankle Boots" data-price="2799" data-category="Footwear">
+          <div class="badge">20% OFF</div>
+          <img src="https://images.unsplash.com/photo-1520974735194-9e0ce827c014?q=80&w=1200&auto=format&fit=crop" alt="Women Ankle Boots" />
+          <h3>Ankle Boots</h3>
+          <p class="price">₹2239 <span class="mrp">₹2799</span></p>
+          <button class="btn btn-add" data-add>+ Add to Cart</button>
+        </article>
+        <article class="product-card" data-id="p26" data-name="Straight Jeans" data-price="1999" data-category="Clothing">
+          <div class="badge">10% OFF</div>
+          <img src="https://images.unsplash.com/photo-1503342217505-b0a15cf70489?q=80&w=1200&auto=format&fit=crop" alt="Women Straight Jeans" />
+          <h3>Straight Jeans</h3>
+          <p class="price">₹1799 <span class="mrp">₹1999</span></p>
+          <button class="btn btn-add" data-add>+ Add to Cart</button>
+        </article>
+        <article class="product-card" data-id="p27" data-name="Evening Gown" data-price="3499" data-category="Clothing">
+          <div class="badge">22% OFF</div>
+          <img src="https://images.unsplash.com/photo-1540574611450-8f2053c2fd3e?q=80&w=1200&auto=format&fit=crop" alt="Women Evening Gown" />
+          <h3>Evening Gown</h3>
+          <p class="price">₹2729 <span class="mrp">₹3499</span></p>
+          <button class="btn btn-add" data-add>+ Add to Cart</button>
+        </article>
+
+        <!-- Kids (additions) -->
+        <article class="product-card" data-id="p28" data-name="Kids T-Shirt" data-price="599" data-category="Clothing">
+          <div class="badge">10% OFF</div>
+          <img src="https://images.unsplash.com/photo-1519235106638-30cc49f0b417?q=80&w=1200&auto=format&fit=crop" alt="Kids T-Shirt" />
+          <h3>Kids T-Shirt</h3>
+          <p class="price">₹539 <span class="mrp">₹599</span></p>
+          <button class="btn btn-add" data-add>+ Add to Cart</button>
+        </article>
+        <article class="product-card" data-id="p29" data-name="Kids Dress" data-price="1299" data-category="Clothing">
+          <div class="badge">12% OFF</div>
+          <img src="https://images.unsplash.com/photo-1530253132539-1c1df2b4d1a5?q=80&w=1200&auto=format&fit=crop" alt="Kids Dress" />
+          <h3>Kids Dress</h3>
+          <p class="price">₹1143 <span class="mrp">₹1299</span></p>
+          <button class="btn btn-add" data-add>+ Add to Cart</button>
+        </article>
+        <article class="product-card" data-id="p30" data-name="Kids Sneakers" data-price="1499" data-category="Footwear">
+          <div class="badge">15% OFF</div>
+          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop" alt="Kids Sneakers" />
+          <h3>Kids Sneakers</h3>
+          <p class="price">₹1274 <span class="mrp">₹1499</span></p>
+          <button class="btn btn-add" data-add>+ Add to Cart</button>
+        </article>
+        <article class="product-card" data-id="p31" data-name="Kids Hoodie" data-price="999" data-category="Clothing">
+          <div class="badge">10% OFF</div>
+          <img src="https://images.unsplash.com/photo-1520975922371-1b309c0a87ae?q=80&w=1200&auto=format&fit=crop" alt="Kids Hoodie" />
+          <h3>Kids Hoodie</h3>
+          <p class="price">₹899 <span class="mrp">₹999</span></p>
+          <button class="btn btn-add" data-add>+ Add to Cart</button>
+        </article>
+        <article class="product-card" data-id="p32" data-name="Kids Shorts" data-price="699" data-category="Clothing">
+          <div class="badge">8% OFF</div>
+          <img src="https://images.unsplash.com/photo-1516796181074-611b54f68947?q=80&w=1200&auto=format&fit=crop" alt="Kids Shorts" />
+          <h3>Kids Shorts</h3>
+          <p class="price">₹643 <span class="mrp">₹699</span></p>
+          <button class="btn btn-add" data-add>+ Add to Cart</button>
+        </article>
+        <article class="product-card" data-id="p33" data-name="Kids Sandals" data-price="899" data-category="Footwear">
+          <div class="badge">12% OFF</div>
+          <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1200&auto=format&fit=crop" alt="Kids Sandals" />
+          <h3>Kids Sandals</h3>
+          <p class="price">₹791 <span class="mrp">₹899</span></p>
+          <button class="btn btn-add" data-add>+ Add to Cart</button>
+        </article>
+        <article class="product-card" data-id="p34" data-name="Kids Jacket" data-price="1799" data-category="Clothing">
+          <div class="badge">10% OFF</div>
+          <img src="https://images.unsplash.com/photo-1540574611450-8f2053c2fd3e?q=80&w=1200&auto=format&fit=crop" alt="Kids Jacket" />
+          <h3>Kids Jacket</h3>
+          <p class="price">₹1619 <span class="mrp">₹1799</span></p>
+          <button class="btn btn-add" data-add>+ Add to Cart</button>
+        </article>
+        <article class="product-card" data-id="p35" data-name="Kids Joggers" data-price="1199" data-category="Clothing">
+          <div class="badge">10% OFF</div>
+          <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=1200&auto=format&fit=crop" alt="Kids Joggers" />
+          <h3>Kids Joggers</h3>
+          <p class="price">₹1079 <span class="mrp">₹1199</span></p>
+          <button class="btn btn-add" data-add>+ Add to Cart</button>
+        </article>
+        <!-- Extra to ensure 10 Women and 10 Kids -->
+        <article class="product-card" data-id="p36" data-name="Women Blazer" data-price="2899" data-category="Clothing">
+          <div class="badge">14% OFF</div>
+          <img src="https://images.unsplash.com/photo-1541976076758-347942db1970?q=80&w=1200&auto=format&fit=crop" alt="Women Blazer" />
+          <h3>Women Blazer</h3>
+          <p class="price">₹2493 <span class="mrp">₹2899</span></p>
+          <button class="btn btn-add" data-add>+ Add to Cart</button>
+        </article>
+        <article class="product-card" data-id="p37" data-name="Kids Kurta Set" data-price="1199" data-category="Clothing">
+          <div class="badge">10% OFF</div>
+          <img src="https://images.unsplash.com/photo-1519235106638-30cc49f0b417?q=80&w=1200&auto=format&fit=crop" alt="Kids Kurta Set" />
+          <h3>Kids Kurta Set</h3>
+          <p class="price">₹1079 <span class="mrp">₹1199</span></p>
+          <button class="btn btn-add" data-add>+ Add to Cart</button>
+        </article>
+        <article class="product-card" data-id="p38" data-name="Kids Track Shoes" data-price="1399" data-category="Footwear">
+          <div class="badge">12% OFF</div>
+          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop" alt="Kids Track Shoes" />
+          <h3>Kids Track Shoes</h3>
+          <p class="price">₹1231 <span class="mrp">₹1399</span></p>
+          <button class="btn btn-add" data-add>+ Add to Cart</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>ShopSmart</h4>
+        <p>Curated fashion at the best prices.</p>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <ul>
+          <li><a href="login_user.html">User Login</a></li>
+          <li><a href="login_admin.html">Admin Login</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Policies</h4>
+        <ul>
+          <li>Returns</li>
+          <li>Shipping</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

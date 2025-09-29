@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Products | ShopSmart</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="admin-layout">
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <img src="images/logo.svg" alt="logo">
+      <span>Admin</span>
+    </div>
+    <nav>
+      <a href="admin_dashboard.html">Dashboard</a>
+      <a class="active" href="admin_products.html">Products</a>
+      <a href="admin_customers.html">Customers</a>
+      <a href="admin_orders.html">Orders</a>
+      <a href="admin_reports.html">Reports</a>
+    </nav>
+  </aside>
+
+  <main class="admin-main">
+    <header class="admin-header">
+      <h1>Products</h1>
+      <div class="admin-actions">
+        <button class="btn btn-primary">+ Add Product</button>
+      </div>
+    </header>
+
+    <section class="card">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Name</th>
+              <th>Category</th>
+              <th>Price</th>
+              <th>Discount</th>
+              <th>Stock</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><img class="table-img" src="images/product1.svg" alt="" /></td>
+              <td>Casual T-Shirt</td>
+              <td>Clothing</td>
+              <td>₹500</td>
+              <td>15%</td>
+              <td>120</td>
+              <td>
+                <button class="chip">Edit</button>
+                <button class="chip chip-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td><img class="table-img" src="images/product6.svg" alt="" /></td>
+              <td>Sneakers</td>
+              <td>Footwear</td>
+              <td>₹3000</td>
+              <td>20%</td>
+              <td>100</td>
+              <td>
+                <button class="chip">Edit</button>
+                <button class="chip chip-danger">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

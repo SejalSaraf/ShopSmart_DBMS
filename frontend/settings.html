@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShopSmart | Settings</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-content">
+      <a href="index.html" class="brand">
+        <img src="images/logo.svg" alt="ShopSmart Logo" class="brand-logo" />
+        <span>ShopSmart</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="cart.html">Cart</a>
+        <a href="profile.html">Profile</a>
+        <a class="active" href="settings.html">Settings</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container section-header">
+      <h2>Account Settings</h2>
+      <p class="muted">Manage your preferences</p>
+    </div>
+
+    <div class="container settings-grid">
+      <div class="card">
+        <h4>Security</h4>
+        <div class="form-control">
+          <label for="password">New Password</label>
+          <input type="password" id="password" placeholder="********" />
+        </div>
+        <div class="form-control">
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password" id="confirmPassword" placeholder="********" />
+        </div>
+        <button class="btn btn-primary" id="savePassword">Update Password</button>
+      </div>
+
+      <div class="card">
+        <h4>Notifications</h4>
+        <label class="switch">
+          <input type="checkbox" id="emailNotif" checked>
+          <span class="slider"></span>
+        </label>
+        <label for="emailNotif" class="muted small">Email notifications</label>
+        <div class="spacer"></div>
+        <label class="switch">
+          <input type="checkbox" id="smsNotif">
+          <span class="slider"></span>
+        </label>
+        <label for="smsNotif" class="muted small">SMS notifications</label>
+      </div>
+
+      <div class="card">
+        <h4>Theme</h4>
+        <div class="theme-row">
+          <button class="btn btn-outline" data-theme="light">Light</button>
+          <button class="btn btn-outline" data-theme="dark">Dark</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>Profile</h4>
+        <ul>
+          <li><a href="profile.html">My Profile</a></li>
+          <li><a href="login_user.html">Logout</a></li>
+        </ul>
+      </div>
+      <div></div>
+      <div></div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

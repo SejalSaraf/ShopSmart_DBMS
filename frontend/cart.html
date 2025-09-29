@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShopSmart | Cart</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-content">
+      <a href="index.html" class="brand">
+        <img src="images/logo.svg" alt="ShopSmart Logo" class="brand-logo" />
+        <span>ShopSmart</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a class="active" href="cart.html">Cart</a>
+        <a href="profile.html">Profile</a>
+        <a href="settings.html">Settings</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container section-header">
+      <h2>Your Cart</h2>
+      <p class="muted">Update quantities or remove items before checkout.</p>
+    </div>
+
+    <div class="container cart-layout">
+      <div class="cart-items" id="cartItems">
+        <!-- Dynamically rendered via JS -->
+      </div>
+      <aside class="cart-summary">
+        <h4>Summary</h4>
+        <div class="summary-row"><span>Subtotal</span><strong id="subtotal">₹0</strong></div>
+        <div class="summary-row"><span>Shipping</span><strong>₹0</strong></div>
+        <div class="summary-row total"><span>Total</span><strong id="total">₹0</strong></div>
+        <a class="btn btn-primary full" href="profile.html">Proceed to Checkout</a>
+        <a class="btn btn-outline full" href="products.html">Continue Shopping</a>
+      </aside>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>Need Help?</h4>
+        <p>Email support@shopsmart.com</p>
+      </div>
+      <div>
+        <h4>Links</h4>
+        <ul>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="settings.html">Settings</a></li>
+        </ul>
+      </div>
+      <div></div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

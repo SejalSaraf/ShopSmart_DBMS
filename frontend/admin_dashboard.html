@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard | ShopSmart</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="admin-layout">
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <img src="images/logo.svg" alt="logo">
+      <span>Admin</span>
+    </div>
+    <nav>
+      <a class="active" href="admin_dashboard.html">Dashboard</a>
+      <a href="admin_products.html">Products</a>
+      <a href="admin_customers.html">Customers</a>
+      <a href="admin_orders.html">Orders</a>
+      <a href="admin_reports.html">Reports</a>
+    </nav>
+  </aside>
+
+  <main class="admin-main">
+    <header class="admin-header">
+      <h1>Dashboard</h1>
+      <div class="admin-actions">
+        <a class="btn btn-outline" href="index.html">Go to Store</a>
+      </div>
+    </header>
+
+    <section class="cards">
+      <div class="stat-card">
+        <div class="stat-title">Total Sales (Today)</div>
+        <div class="stat-value">₹52,300</div>
+        <div class="stat-delta up">+12%</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-title">Orders</div>
+        <div class="stat-value">1,245</div>
+        <div class="stat-delta up">+5%</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-title">Customers</div>
+        <div class="stat-value">9,842</div>
+        <div class="stat-delta">0.0%</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-title">Refunds</div>
+        <div class="stat-value">₹1,200</div>
+        <div class="stat-delta down">-2%</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h4>Sales Overview</h4>
+      <div class="bar-chart">
+        <div style="height: 60%"></div>
+        <div style="height: 85%"></div>
+        <div style="height: 40%"></div>
+        <div style="height: 70%"></div>
+        <div style="height: 55%"></div>
+        <div style="height: 90%"></div>
+        <div style="height: 65%"></div>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>
