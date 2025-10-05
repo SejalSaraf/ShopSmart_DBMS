@@ -33,5 +33,38 @@
       <a href="login_admin.html">Go to Admin Login</a>
     </div>
   </div>
+
+  <script>
+    document.querySelector('.form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      try {
+        const response = await fetch('http://127.0.0.1:5000/login_user', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        });
+
+        let data;
+        try {
+          data = await response.json();
+        } catch {
+          data = {};
+        }
+
+        if (response.ok && data.success) {
+          window.location.href = 'index.html';
+        } else {
+          alert(data.message || 'Invalid credentials. Please try again.');
+        }
+      } catch (err) {
+        console.error('Error:', err);
+        alert('Server error. Please try again later.');
+      }
+    });
+  </script>
 </body>
 </html>
