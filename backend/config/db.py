@@ -5,5 +5,5 @@ def get_connection():
         host="localhost",
         user="root",
         password="Komal@2005",   # Your MySQL password
-        database="onlineShoppingdb"
+        database="OnlineShoppingDB"
     )

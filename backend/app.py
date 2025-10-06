@@ -14,14 +14,8 @@ app = Flask(
     static_url_path=''
 )
 
-# Database connection setup
-def get_db_connection():
-    return mysql.connector.connect(
-        host='localhost',
-        user='your_mysql_user',
-        password='your_mysql_password',
-        database='OnlineShoppingDB'
-    )
+# Database connection setup (centralized)
+from config.db import get_connection as get_db_connection
 
 app.secret_key = 'your_secret_key'  # Needed for session
 
@@ -132,17 +126,19 @@ def checkout():
         cursor = conn.cursor()
 
         # Get user id from email stored in session
-        cursor.execute("SELECT id FROM User WHERE email=%s", (session['user_email'],))
+        cursor.execute("SELECT user_id FROM User WHERE email=%s", (session['user_email'],))
         user = cursor.fetchone()
         if not user:
             return jsonify({"success": False, "message": "User not found"}), 404
         user_id = user[0]
 
-        # Insert order
-        created_at = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        # Insert order with current schema: total_amount, order_date, status
+        total_amount = sum(float(item['price']) * int(item['qty']) for item in cart)
+        order_date = datetime.now().strftime('%Y-%m-%d')
+        status = 'Pending'
         cursor.execute(
-            "INSERT INTO `Order` (user_id, created_at) VALUES (%s, %s)",
-            (user_id, created_at)
+            "INSERT INTO `Order` (user_id, total_amount, order_date, status) VALUES (%s, %s, %s, %s)",
+            (user_id, total_amount, order_date, status)
         )
         order_id = cursor.lastrowid
 
@@ -190,5 +186,15 @@ def images(filename):
     return send_from_directory(os.path.join(frontend_dir, 'images'), filename)
 
 
+# Simple CORS support (for development/testing)
+@app.after_request
+def add_cors_headers(response):
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    response.headers['Access-Control-Allow-Methods'] = 'GET,POST,PUT,DELETE,OPTIONS'
+    response.headers['Access-Control-Allow-Headers'] = 'Content-Type, Authorization'
+    response.headers['Access-Control-Allow-Credentials'] = 'true'
+    return response
+
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
