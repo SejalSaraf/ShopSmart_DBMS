@@ -37,5 +37,36 @@
       <a class="btn btn-outline full" href="login_user.html">Back to Login</a>
     </form>
   </div>
+
+  <script>
+    document.querySelector('.form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      try {
+        const response = await fetch('http://127.0.0.1:5000/register_user', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, phone, password })
+        });
+
+        const data = await response.json();
+
+        if (response.ok && data.success) {
+          alert('User registered successfully!');
+          window.location.href = 'index.html'; // redirect to homepage
+        } else {
+          alert(data.message || 'Registration failed. Please try again.');
+        }
+      } catch (err) {
+        console.error(err);
+        alert('Server error. Please try again later.');
+      }
+    });
+  </script>
 </body>
 </html>

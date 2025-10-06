@@ -33,5 +33,35 @@
       <a class="btn btn-outline full" href="login_admin.html">Back to Login</a>
     </form>
   </div>
+
+  <script>
+    document.querySelector('.form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      try {
+        const response = await fetch('http://127.0.0.1:5000/register_admin', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, password })
+        });
+
+        const data = await response.json();
+
+        if (response.ok && data.success) {
+          alert('Admin registered successfully!');
+          window.location.href = 'admin_dashboard.html';
+        } else {
+          alert(data.message || 'Registration failed. Please try again.');
+        }
+      } catch (err) {
+        console.error(err);
+        alert('Server error. Please try again later.');
+      }
+    });
+  </script>
 </body>
 </html>

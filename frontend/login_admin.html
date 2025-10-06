@@ -11,27 +11,53 @@
 </head>
 <body class="auth-bg">
   <div class="auth-card">
-    <a href="index.html" class="brand auth-brand">
+    <a href="/" class="brand auth-brand">
       <img src="images/logo.svg" alt="ShopSmart Logo" class="brand-logo" />
       <span>ShopSmart</span>
     </a>
     <h2>Admin Login</h2>
+
     <form class="form">
-      <div class="form-control">
-        <label for="email">Email</label>
-        <input type="email" id="email" placeholder="admin@example.com" required />
-      </div>
-      <div class="form-control">
-        <label for="password">Password</label>
-        <input type="password" id="password" placeholder="********" required />
-      </div>
-      <button type="submit" class="btn btn-primary full">Login</button>
-      <a class="btn btn-outline full" href="register_admin.html">Create Admin</a>
-    </form>
-    <div class="auth-switch">
-      <span class="muted small">Are you a User?</span>
-      <a href="login_user.html">Go to User Login</a>
-    </div>
+  <div class="form-control">
+    <label for="email">Email</label>
+    <input type="email" id="email" placeholder="admin@example.com" required />
   </div>
+  <div class="form-control">
+    <label for="password">Password</label>
+    <input type="password" id="password" placeholder="********" required />
+  </div>
+  <button type="submit" class="btn btn-primary full">Login</button>
+  <a class="btn btn-outline full" href="register_admin.html">Create Admin</a>
+</form>
+
+<script>
+document.querySelector('.form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const email = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value.trim();
+
+  try {
+    const response = await fetch('/admin_login', {  // <-- local path
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password })
+    });
+
+    let data;
+    try { data = await response.json(); } catch { data = {}; }
+
+    if (response.ok && data.success) {
+      window.location.href = 'admin_dashboard.html';
+    } else {
+      alert(data.message || 'Invalid credentials. Please try again.');
+    }
+  } catch (err) {
+    console.error('Error:', err);
+    alert('Server error. Please try again later.');
+  }
+});
+</script>
+
 </body>
 </html>
