@@ -51,6 +51,7 @@ CREATE TABLE OrderItem (
     FOREIGN KEY (product_id) REFERENCES Product(product_id)
 );
 
+
 -- INSERT USERS
 INSERT INTO User (name, email, password, phone, date_joined) VALUES
 ('Alice Sharma', 'alice@gmail.com', 'alice123', '9876543210', '2023-01-10'),
@@ -58,11 +59,7 @@ INSERT INTO User (name, email, password, phone, date_joined) VALUES
 ('Priya Singh', 'priya@gmail.com', 'priya123', '9988776655', '2023-03-05'),
 ('Manish Gupta', 'manish@gmail.com', 'manish123', '9876500011', '2023-04-15'),
 ('Sneha Kapoor', 'sneha@gmail.com', 'sneha123', '9112233445', '2023-05-20'),
-('Vikas Jain', 'vikas@gmail.com', 'vikas123', '9822112233', '2023-06-01'),
-('Neha Reddy', 'neha@gmail.com', 'neha123', '9776655443', '2023-07-03'),
-('Kunal Mehta', 'kunal@gmail.com', 'kunal123', '9888877766', '2023-08-10'),
-('Divya Patel', 'divya@gmail.com', 'divya123', '9556677889', '2023-09-05'),
-('Arjun Nair', 'arjun@gmail.com', 'arjun123', '9665544332', '2023-10-01');
+
 
 -- INSERT ADMINS
 INSERT INTO Admin (name, email, password) VALUES
@@ -71,86 +68,59 @@ INSERT INTO Admin (name, email, password) VALUES
 ('Finance Admin', 'finance@gmail.com', 'fin123'),
 ('Tech Admin', 'techadmin@gmail.com', 'tech123'),
 ('HR Admin', 'hr@gmail.com', 'hr123'),
-('Sales Admin', 'sales@gmail.com', 'sales123'),
-('Inventory Admin', 'inventory@gmail.com', 'inv123'),
-('Customer Care', 'support@gmail.com', 'support123'),
-('Legal Admin', 'legal@gmail.com', 'legal123'),
-('Marketing Admin', 'marketing@gmail.com', 'market123');
 
--- INSERT PRODUCTS (using the same images shown on the UI)
-INSERT INTO Product (name, price, discount, stock, image_url, category) VALUES
-('Casual T-Shirt', 500.00, 15.00, 120, 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1200&auto=format&fit=crop', 'Clothing'),
-('Formal Shirt', 1200.00, 10.00, 80, 'https://images.unsplash.com/photo-1520975429432-7b30f6e6f927?q=80&w=1200&auto=format&fit=crop', 'Clothing'),
-('Denim Jeans', 2000.00, 12.00, 60, 'https://images.unsplash.com/photo-1503342217505-b0a15cf70489?q=80&w=1200&auto=format&fit=crop', 'Clothing'),
-('Summer Dress', 1800.00, 8.00, 70, 'https://images.unsplash.com/photo-1520974735194-9e0ce827c014?q=80&w=1200&auto=format&fit=crop', 'Clothing'),
-('Hoodie', 1500.00, 10.00, 90, 'https://images.unsplash.com/photo-1513377882215-6a5d71ed7f09?q=80&w=1200&auto=format&fit=crop', 'Clothing'),
-('Jacket', 3500.00, 15.00, 50, 'https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?q=80&w=1200&auto=format&fit=crop', 'Clothing'),
-('Saree', 2500.00, 5.00, 40, 'https://images.unsplash.com/photo-1600635926720-64318a0f9b07?q=80&w=1200&auto=format&fit=crop', 'Clothing'),
-('Kurta Set', 2200.00, 10.00, 55, 'https://images.unsplash.com/photo-1580654243920-61ab681f0a4b?q=80&w=1200&auto=format&fit=crop', 'Clothing'),
-('Sneakers', 3000.00, 20.00, 100, 'https://images.unsplash.com/photo-1519744792095-2f2205e87b6f?q=80&w=1200&auto=format&fit=crop', 'Footwear'),
-('Sandals', 1200.00, 12.00, 75, 'https://images.unsplash.com/photo-1520975922993-6e04a0bd0bfc?q=80&w=1200&auto=format&fit=crop', 'Footwear');
 
--- ADDITIONAL PRODUCTS (Men)
-INSERT INTO Product (name, price, discount, stock, image_url, category) VALUES
-('Checked Shirt', 1299.00, 10.00, 80, 'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=1200&auto=format&fit=crop', 'Clothing'),
-('Casual Chinos', 1599.00, 8.00, 70, 'https://images.unsplash.com/photo-1516826957135-700dedea698c?q=80&w=1200&auto=format&fit=crop', 'Clothing'),
-('Graphic Tee', 799.00, 15.00, 120, 'https://images.unsplash.com/photo-1521337586325-6bfe10ce785f?q=80&w=1200&auto=format&fit=crop', 'Clothing'),
-('Bomber Jacket', 2999.00, 20.00, 50, 'https://images.unsplash.com/photo-1495121605193-b116b5b09a42?q=80&w=1200&auto=format&fit=crop', 'Clothing'),
-('Running Shoes', 3499.00, 25.00, 90, 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop', 'Footwear'),
-('Slim Fit Jeans', 2099.00, 12.00, 60, 'https://images.unsplash.com/photo-1503342217505-b0a15cf70489?q=80&w=1200&auto=format&fit=crop', 'Clothing'),
-('Polo T-Shirt', 999.00, 10.00, 110, 'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=1200&auto=format&fit=crop', 'Clothing'),
-('Denim Jacket', 3299.00, 18.00, 55, 'https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?q=80&w=1200&auto=format&fit=crop', 'Clothing'),
-('Formal Trousers', 1899.00, 10.00, 75, 'https://images.unsplash.com/photo-1582738412003-fc01f3273fe2?q=80&w=1200&auto=format&fit=crop', 'Clothing'),
-('Leather Loafers', 2799.00, 15.00, 65, 'https://images.unsplash.com/photo-1580984969071-1af9da6afdd1?q=80&w=1200&auto=format&fit=crop', 'Footwear');
 
--- ADDITIONAL PRODUCTS (Women)
-INSERT INTO Product (name, price, discount, stock, image_url, category) VALUES
-('Floral Dress', 1999.00, 20.00, 70, 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop', 'Clothing'),
-('Party Heels', 2499.00, 18.00, 80, 'https://images.unsplash.com/photo-1520974735194-9e0ce827c014?q=80&w=1200&auto=format&fit=crop', 'Footwear'),
-('Kurti Set', 2299.00, 12.00, 55, 'https://images.unsplash.com/photo-1580654243920-61ab681f0a4b?q=80&w=1200&auto=format&fit=crop', 'Clothing'),
-('Elegant Saree', 2599.00, 10.00, 40, 'https://images.unsplash.com/photo-1600635926720-64318a0f9b07?q=80&w=1200&auto=format&fit=crop', 'Clothing'),
-('Denim Skirt', 1399.00, 10.00, 65, 'https://images.unsplash.com/photo-1520975922371-1b309c0a87ae?q=80&w=1200&auto=format&fit=crop', 'Clothing'),
-('Casual Top', 899.00, 8.00, 120, 'https://images.unsplash.com/photo-1520975429432-7b30f6e6f927?q=80&w=1200&auto=format&fit=crop', 'Clothing'),
-('Ankle Boots', 2799.00, 20.00, 70, 'https://images.unsplash.com/photo-1517777596323-6e3c6c1f1b47?q=80&w=1200&auto=format&fit=crop', 'Footwear'),
-('Straight Jeans', 1999.00, 10.00, 60, 'https://images.unsplash.com/photo-1503342217505-b0a15cf70489?q=80&w=1200&auto=format&fit=crop', 'Clothing'),
-('Evening Gown', 3499.00, 22.00, 45, 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1200&auto=format&fit=crop', 'Clothing'),
-('Women Blazer', 2899.00, 14.00, 50, 'https://images.unsplash.com/photo-1521335629791-ce4aec67dd47?q=80&w=1200&auto=format&fit=crop', 'Clothing');
+-- 5 MEN'S CLOTHING
+INSERT INTO Product (product_id, name, price, discount, stock, image_url, category) VALUES
+(1, 'Casual T-Shirt (Blue)', 500.00, 15.00, 120, 'https://images.pexels.com/photos/428338/pexels-photo-428338.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', 'Clothing'),
+(2, 'Formal Shirt (White)', 1200.00, 10.00, 80, 'https://uspoloassn.in/cdn/shop/files/1_14b5a2b0-345e-4106-a935-597edfbdde1a.jpg', 'Clothing'),
+(3, 'Denim Jeans (Regular Fit)', 2000.00, 12.00, 60, 'https://m.media-amazon.com/images/I/91el-HjR+YL._UY1100_.jpg', 'Clothing'),
+(4, 'Hoodie (Grey)', 1500.00, 10.00, 90, 'https://m.media-amazon.com/images/I/71EfXs5jxUL._UY1100_.jpg', 'Clothing'),
+(5, 'Bomber Jacket (Olive)', 2999.00, 20.00, 50, 'https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRKodNXHcAsllrQ3gq6skmfgxRtGrD50J3WgIj_XH7axlnlusZo_QMZ7_rlcuAKpUwJXUF9L3lLPnvWacKwFjcrJdUzSYlRXZw6VjNSm5RA', 'Clothing');
 
--- ADDITIONAL PRODUCTS (Kids)
-INSERT INTO Product (name, price, discount, stock, image_url, category) VALUES
-('Kids T-Shirt', 599.00, 10.00, 120, 'https://images.unsplash.com/photo-1519235106638-30cc49f0b417?q=80&w=1200&auto=format&fit=crop', 'Clothing'),
-('Kids Dress', 1299.00, 12.00, 90, 'https://images.unsplash.com/photo-1530253132539-1c1df2b4d1a5?q=80&w=1200&auto=format&fit=crop', 'Clothing'),
-('Kids Sneakers', 1499.00, 15.00, 100, 'https://images.unsplash.com/photo-1519744792095-2f2205e87b6f?q=80&w=1200&auto=format&fit=crop', 'Footwear'),
-('Kids Hoodie', 999.00, 10.00, 110, 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?q=80&w=1200&auto=format&fit=crop', 'Clothing'),
-('Kids Shorts', 699.00, 8.00, 130, 'https://images.unsplash.com/photo-1520975922993-6e04a0bd0bfc?q=80&w=1200&auto=format&fit=crop', 'Clothing'),
-('Kids Sandals', 899.00, 12.00, 100, 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1200&auto=format&fit=crop', 'Footwear'),
-('Kids Jacket', 1799.00, 10.00, 60, 'https://images.unsplash.com/photo-1618354691438-b6f1bb111f58?q=80&w=1200&auto=format&fit=crop', 'Clothing'),
-('Kids Joggers', 1199.00, 10.00, 100, 'https://images.unsplash.com/photo-1593032457866-4ad8eb49c1a4?q=80&w=1200&auto=format&fit=crop', 'Clothing'),
-('Kids Kurta Set', 1199.00, 10.00, 80, 'https://images.unsplash.com/photo-1593032457892-9f0c7d4f1c85?q=80&w=1200&auto=format&fit=crop', 'Clothing'),
-('Kids Track Shoes', 1399.00, 12.00, 90, 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop', 'Footwear');
+-- 5 WOMEN'S CLOTHING
+INSERT INTO Product (product_id, name, price, discount, stock, image_url, category) VALUES
+(6, 'Summer Dress (Floral)', 1800.00, 8.00, 70, 'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTAL43F-68WMizDeDzUsPT7t4eqtrscABnhkneCL72Lf_pL5Nhhe033Xupafb4VfZf_FfKOZYWbYYbYkOKK6Xew5cjD5uVwrkd6CXOzsQZ9frsJNLoMzAPP', 'Clothing'),
+(7, 'Elegant Saree (Georgette)', 2599.00, 10.00, 40, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa0OjBeWKsVXfIASzQDfCAGM2IFZhM1186kA&s', 'Clothing'),
+(8, 'Kurti Set (Embroidered)', 2299.00, 12.00, 55, 'https://staticm247.kalkifashion.com/media/catalog/product/p/i/pink_embroidered_kurti_set_with_butti_work_on-sg273342_6_.jpg?w=500', 'Clothing'),
+(9, 'Casual Top (Striped)', 899.00, 8.00, 120, 'https://media.landmarkshops.in/cdn-cgi/image/h=730,w=540,q=85,fit=cover/max-new/1000014161406-Beige-IVORY-1000014161406_01-2100.jpg', 'Clothing'),
+(10, 'Evening Gown (Red)', 3499.00, 22.00, 45, 'https://www.jovani.com/wp-content/uploads/06538-RED-205-scaled.jpg', 'Clothing');
+
+-- 5 FOOTWEAR
+INSERT INTO Product (product_id, name, price, discount, stock, image_url, category) VALUES
+(11, 'Sneakers (White/Black)', 3000.00, 20.00, 100, 'https://images.pexels.com/photos/267320/pexels-photo-267320.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', 'Footwear'),
+(12, 'Sandals (Brown Leather)', 1200.00, 12.00, 75, 'https://bugattishoes.in/cdn/shop/files/328-AJ482-1100-6100_008.jpg?crop=center&height=1080&v=1746782374&width=1080', 'Footwear'),
+(13, 'Running Shoes (Performance)', 3499.00, 25.00, 90, 'https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', 'Footwear'),
+(14, 'Party Heels (Stiletto)', 2499.00, 18.00, 80, 'https://m.media-amazon.com/images/I/711ZtOPi8SL._UY1000_.jpg', 'Footwear'),
+(15, 'Ankle Boots (Suede)', 2799.00, 20.00, 70, 'https://img.tatacliq.com/images/i20//658Wx734H/MP000000024244231_658Wx734H_202410290648471.jpeg', 'Footwear');
+
+
+
 
 -- INSERT ORDERS
-INSERT INTO `Order`  (user_id, order_date, total_amount, status) VALUES
-(1, '2025-08-01', 1400.00, 'Completed'),
-(2, '2025-08-02', 900.00, 'Pending'),
-(3, '2025-08-03', 1800.00, 'Shipped'),
-(1, '2025-08-04', 750.00, 'Completed'),
-(4, '2025-08-05', 2100.00, 'Cancelled'),
-(5, '2025-08-06', 1200.00, 'Completed'),
-(2, '2025-08-07', 600.00, 'Shipped'),
-(3, '2025-08-08', 3200.00, 'Completed'),
-(4, '2025-08-09', 450.00, 'Pending'),
-(5, '2025-08-10', 2750.00, 'Completed');
+
+INSERT INTO `Order` (user_id, order_date, total_amount, status) VALUES
+(1, '2025-08-01', 1000.00, 'Completed'), -- (2 * Product 1 Price)
+(2, '2025-08-02', 2000.00, 'Pending'),   -- (1 * Product 3 Price)
+(3, '2025-08-03', 8997.00, 'Shipped'),   -- (3 * Product 5 Price)
+(1, '2025-08-04', 2599.00, 'Completed'), -- (1 * Product 7 Price)
+(4, '2025-08-05', 6000.00, 'Cancelled'), -- (2 * Product 11 Price)
+(5, '2025-08-06', 2400.00, 'Completed'), -- (2 * Product 2 Price)
+(2, '2025-08-07', 1800.00, 'Shipped'),   -- (1 * Product 6 Price)
+(3, '2025-08-08', 6000.00, 'Completed'), -- (4 * Product 4 Price)
+(4, '2025-08-09', 2299.00, 'Pending'),   -- (1 * Product 8 Price)
+(5, '2025-08-10', 6000.00, 'Completed'); -- (5 * Product 12 Price)
 
 -- INSERT ORDER ITEMS
 INSERT INTO OrderItem (order_id, product_id, quantity, price) VALUES
-(1, 1, 2, 1400.00),
-(2, 3, 1, 900.00), 
-(3, 5, 3, 1800.00),
-(4, 7, 1, 750.00),
-(5, 9, 2, 2100.00),
-(6, 2, 2, 1200.00),
-(7, 4, 1, 600.00),
-(8, 6, 4, 3200.00),
-(9, 8, 1, 450.00),
-(10, 10, 5, 2750.00);
+(1, 1, 2, 500.00),     -- Casual T-Shirt (ID 1)
+(2, 3, 1, 2000.00),    -- Denim Jeans (ID 3)
+(3, 5, 3, 2999.00),    -- Bomber Jacket (ID 5)
+(4, 7, 1, 2599.00),    -- Elegant Saree (ID 7)
+(5, 11, 2, 3000.00),   -- Sneakers (ID 11)
+(6, 2, 2, 1200.00),    -- Formal Shirt (ID 2)
+(7, 6, 1, 1800.00),    -- Summer Dress (ID 6)
+(8, 4, 4, 1500.00),    -- Hoodie (ID 4)
+(9, 8, 1, 2299.00),    -- Kurti Set (ID 8)
+(10, 12, 5, 1200.00);  -- Sandals (ID 12)
