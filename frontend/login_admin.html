@@ -38,11 +38,11 @@ document.querySelector('.form').addEventListener('submit', async (e) => {
   const password = document.getElementById('password').value.trim();
 
   try {
-    const response = await fetch('/admin_login', {  // <-- local path
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password })
-    });
+   const response = await fetch('http://127.0.0.1:5000/admin/login', {  // <-- fixed path
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ email, password })
+});
 
     let data;
     try { data = await response.json(); } catch { data = {}; }
